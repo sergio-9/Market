@@ -1,6 +1,10 @@
 package com.project.market.persistence.mapper;
 
 import com.project.market.persistence.entity.Producto;
+
+import java.util.List;
+
+import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
@@ -19,4 +23,10 @@ public interface ProductMapper {
         @Mapping(source = "categora",target = "category"),
     })
     Product toProduct(Producto producto);
+    List<Product> toProducts(List<Producto> productos);
+
+    @InheritConfiguration
+    @Mapping(target = "codigoBarras", ignore = true)
+    Producto toProducto(Product product);
+    
 }

@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "categorias")
@@ -19,7 +20,7 @@ public class Categoria {
     private boolean estado;
 
     @OneToMany(mappedBy = "categoria")
-    private Producto productos;
+    private List<Producto> productos;
 
     public String getIdCategoria() {
         return idCategoria;

@@ -1,15 +1,15 @@
 package com.project.market.domain;
 
 public class Category {
-    private int ctegoria;
+    private int categoryId;
     private String category;
     private boolean active;
 
-    public int getCtegoria() {
-        return ctegoria;
+    public int getCategoryId() {
+        return categoryId;
     }
-    public void setCtegoria(int ctegoria) {
-        this.ctegoria = ctegoria;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
     public String getCategory() {
         return category;

@@ -20,8 +20,8 @@ public class ProductoRepository  implements ProductRepository{
     private ProductMapper mapper;
 
     @Override
-    public Optional<List<Product>> getByCategoria(int categoryId) {
-        List<Producto> productos = productoCrudRepository.findByIdCategoria(categoryId);
+    public Optional<List<Product>> getByCategory(int categoryId) {
+        List<Producto> productos = productoCrudRepository.findByIdCategoriaOrderByNombreAsc(categoryId);
         return Optional.of(mapper.toProducts(productos));
     }
     @Override
@@ -39,7 +39,7 @@ public class ProductoRepository  implements ProductRepository{
         return productoCrudRepository.findById(productId).map(producto -> mapper.toProduct(producto));
     }
     @Override
-    public Product save(Product product){
+    public Product save(Product product) {
         Producto producto = mapper.toProducto(product);
         return mapper.toProduct(productoCrudRepository.save(producto));
     }

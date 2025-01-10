@@ -10,7 +10,7 @@ import com.project.market.persistence.entity.ComprasProducto;
 @Mapper(componentModel = "spring", uses = {ProductMapper.class})
 public interface PurchaseItemMapper {
     @Mappings({
-        @Mapping(source = "id.idProducto", target = "poductId"),
+        @Mapping(source = "id.idProducto", target = "productId"),
         @Mapping(source = "cantidad", target = "quantity"),
         @Mapping(source = "estado", target = "active")
     })
@@ -20,7 +20,7 @@ public interface PurchaseItemMapper {
     @Mappings({
         @Mapping(target = "compra", ignore = true),
         @Mapping(target = "producto", ignore = true),
-        @Mapping(target = "id.idcompra", ignore = true)
+        @Mapping(target = "id.idCompra", ignore = true)
     })
     ComprasProducto toComprasProducto(PurchaseItem item);
 }
